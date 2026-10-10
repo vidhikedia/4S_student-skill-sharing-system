@@ -131,9 +131,9 @@ const Messages = () => {
       const randomReply =
         simulatedReplies[Math.floor(Math.random() * simulatedReplies.length)];
 
-      const raw = localStorage.getItem('4s_chat_conversations');
-      if (raw) {
-        try {
+      try {
+        const raw = localStorage.getItem('4s_chat_conversations');
+        if (raw) {
           const list = JSON.parse(raw);
           const idx = list.findIndex(
             (c) => c.peerName.toLowerCase() === activeConversation.peerName.toLowerCase()
@@ -152,9 +152,9 @@ const Messages = () => {
             localStorage.setItem('4s_chat_conversations', JSON.stringify(list));
             window.dispatchEvent(new Event('4s_chat_change'));
           }
-        } catch (err) {
-          console.error('Error simulating reply', err);
         }
+      } catch (err) {
+        console.error('Error simulating reply', err);
       }
       setIsPeerTyping(false);
     }, 1200);

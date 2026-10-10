@@ -44,17 +44,17 @@ const Login = () => {
 
     // Demo authentication:
     // If logging in as default user or any registered user
-    const existing = localStorage.getItem('4s_active_user');
     let userToSave = DEFAULT_USER;
-    if (existing) {
-      try {
+    try {
+      const existing = localStorage.getItem('4s_active_user');
+      if (existing) {
         const parsed = JSON.parse(existing);
         if (parsed.email && parsed.email.toLowerCase() === email.toLowerCase()) {
           userToSave = parsed;
         }
-      } catch (err) {
-        console.error(err);
       }
+    } catch (err) {
+      console.error(err);
     }
 
     // Save and redirect

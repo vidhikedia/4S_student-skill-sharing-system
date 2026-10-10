@@ -10,7 +10,7 @@ import './MatchFoundAnimation.css';
 /**
  * 3 Demo Pairs for Inline Landing Page Showcase (loops every 8s)
  */
-const DEMO_PAIRS = [
+export const DEMO_PAIRS = [
   {
     teacherName: 'Aarav',
     learnerName: 'Meera',
@@ -37,7 +37,7 @@ const DEMO_PAIRS = [
 /**
  * Original Chibi Student Character: Teacher (Blue Outfit, Skill Badge)
  */
-function ChibiTeacher({ stage, shouldReduceMotion }) {
+export function ChibiTeacher({ stage, shouldReduceMotion }) {
   // Animation states according to 3.5s sequence
   // a) 0.0-0.6s: slide in from left with bounce
   // b) 0.6-1.2s: lean toward center
@@ -176,7 +176,7 @@ function ChibiTeacher({ stage, shouldReduceMotion }) {
 /**
  * Original Chibi Student Character: Learner (Pink Outfit, Notebook)
  */
-function ChibiLearner({ stage, shouldReduceMotion }) {
+export function ChibiLearner({ stage, shouldReduceMotion }) {
   return (
     <motion.div
       className="match-chibi-wrap match-chibi-learner"
@@ -315,7 +315,7 @@ function ChibiLearner({ stage, shouldReduceMotion }) {
 /**
  * Handshake Clasp Component (Center Contact Point)
  */
-function HandshakeClasp({ stage, shouldReduceMotion }) {
+export function HandshakeClasp({ stage, shouldReduceMotion }) {
   if (stage < 2 && !shouldReduceMotion) return null;
 
   return (
@@ -395,7 +395,7 @@ function HandshakeClasp({ stage, shouldReduceMotion }) {
 /**
  * Comic Starburst SVG Background
  */
-function ComicBurst({ stage, shouldReduceMotion }) {
+export function ComicBurst({ stage, shouldReduceMotion }) {
   if (stage < 3 && !shouldReduceMotion) return null;
 
   return (
@@ -443,7 +443,7 @@ function ComicBurst({ stage, shouldReduceMotion }) {
 /**
  * Radiating Speed Lines
  */
-function SpeedLines({ stage, shouldReduceMotion }) {
+export function SpeedLines({ stage, shouldReduceMotion }) {
   if (stage < 3 || shouldReduceMotion) return null;
 
   return (
@@ -476,7 +476,7 @@ function SpeedLines({ stage, shouldReduceMotion }) {
 /**
  * 10 Sparkles & 4-Point Stars
  */
-function BurstSparkles({ stage, shouldReduceMotion }) {
+export function BurstSparkles({ stage, shouldReduceMotion }) {
   if (stage < 3 || shouldReduceMotion) return null;
 
   const sparkles = [

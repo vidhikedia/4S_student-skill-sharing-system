@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import MangaCard from '../components/MangaCard.jsx';
 import MatchFoundAnimation from '../components/MatchFoundAnimation.jsx';
+import SkillBuddies from '../components/SkillBuddies.jsx';
 import Leaderboard from '../components/Leaderboard.jsx';
 import SkillMasterRewardModal from '../components/SkillMasterRewardModal.jsx';
 import { useAuth } from '../utils/auth.js';
@@ -371,163 +372,7 @@ const Home = () => {
       </section>
 
       {/* ------------------------------------------------------------------
-          2. Visual Section: Students Collaborating and Learning
-          ------------------------------------------------------------------ */}
-      <section className="collab-visual-section" aria-label="Live Student Collaboration Showcase">
-        <div className="container">
-          <div className="collab-card-wrapper">
-            <div className="collab-card">
-              {/* Window Bar */}
-              <div className="collab-header">
-                <div className="collab-header-left">
-                  <div className="window-dots" aria-hidden="true">
-                    <span className="dot dot-red"></span>
-                    <span className="dot dot-yellow"></span>
-                    <span className="dot dot-green"></span>
-                  </div>
-                  <div className="collab-session-title">
-                    <span>4S Active Peer Exchange</span>
-                    <span className="collab-live-badge">
-                      <span className="pulse-indicator"></span>
-                      Live Session
-                    </span>
-                  </div>
-                </div>
-
-                <div className="collab-header-right">
-                  <div className="collab-tools">
-                    <span className="tool-chip active">
-                      <Video size={12} />
-                      <span>Audio & Video</span>
-                    </span>
-                    <span className="tool-chip">
-                      <MessageSquare size={12} />
-                      <span>Live Chat</span>
-                    </span>
-                  </div>
-                  <span className="collab-timer">38:45 / 45m</span>
-                </div>
-              </div>
-
-              {/* Collaboration Body */}
-              <div className="collab-body">
-                {/* Left: Student Skill Matching View */}
-                <div className="peer-exchange-card">
-                  <div className="peer-exchange-title">
-                    <span>Matched Student Pair</span>
-                    <span className="text-primary">1-on-1 Session</span>
-                  </div>
-
-                  <div className="peer-cards-row">
-                    {/* Student 1: Teaching React */}
-                    <div className="student-peer-box">
-                      <div className="student-peer-top">
-                        <div className="student-peer-avatar avatar-indigo">PS</div>
-                        <div className="student-peer-info">
-                          <h4>Priya Sharma</h4>
-                          <p>B.Tech CS · 3rd Year</p>
-                        </div>
-                      </div>
-                      <div className="peer-skill-tag">
-                        <span className="peer-skill-label label-teaching">Teaching</span>
-                        <strong className="text-primary">React & UI Architecture</strong>
-                      </div>
-                    </div>
-
-                    {/* Swap Indicator */}
-                    <div className="swap-indicator" title="Peer Skill Swap">
-                      <Share2 size={16} />
-                    </div>
-
-                    {/* Student 2: Learning React, Teaching Python */}
-                    <div className="student-peer-box">
-                      <div className="student-peer-top">
-                        <div className="student-peer-avatar avatar-purple">RV</div>
-                        <div className="student-peer-info">
-                          <h4>Rohan Verma</h4>
-                          <p>Electronics · 2nd Year</p>
-                        </div>
-                      </div>
-                      <div className="peer-skill-tag">
-                        <span className="peer-skill-label label-learning">Learning</span>
-                        <strong className="text-secondary">Responsive Frontend Grid</strong>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="collab-chat-snippet">
-                    <p className="chat-author">Rohan Verma (Learner):</p>
-                    <p>"The concept of breaking the layout into flex-rows made complete sense now! Working on the card component next."</p>
-                  </div>
-                </div>
-
-                {/* Right: Collaborative Learning Workspace */}
-                <div className="collab-canvas">
-                  <div className="canvas-topic-header">
-                    <p className="canvas-tag">Active Shared Workspace</p>
-                    <h3 className="canvas-title">Topic: Responsive Card Components & State Props</h3>
-                  </div>
-
-                  <div className="canvas-checklist">
-                    <div className="check-item">
-                      <CheckCircle2 size={16} className="check-icon-done" />
-                      <span>1. Modularizing Component Structure (Completed)</span>
-                    </div>
-                    <div className="check-item">
-                      <CheckCircle2 size={16} className="check-icon-done" />
-                      <span>2. Applying Responsive Breakpoints with Tailwind & CSS</span>
-                    </div>
-                    <div className="check-item">
-                      <Clock size={16} className="check-icon-current" />
-                      <span>3. State Lifting & Event Handling Q&A (In Progress)</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center justify-between mt-2 pt-3 border-t border-slate-100">
-                    <div className="flex items-center gap-2">
-                      <div className="flex items-center text-amber-500 font-bold text-xs">
-                        <Star size={14} fill="#f59e0b" />
-                        <span className="ml-1 text-slate-800">4.9 Peer Rating</span>
-                      </div>
-                      <span className="text-muted text-xs">· 12 Sessions Exchanged</span>
-                    </div>
-                    <button
-                      onClick={() => navigate('/sessions')}
-                      className="btn btn-sm btn-outline-primary"
-                    >
-                      <span>Join Workspace</span>
-                      <ChevronRight size={14} />
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Collaborative Bottom Metrics */}
-              <div className="collab-metrics-bar">
-                <div className="metric-item">
-                  <div className="metric-value">1,400+</div>
-                  <div className="metric-label">Active Campus Students</div>
-                </div>
-                <div className="metric-item">
-                  <div className="metric-value">320+</div>
-                  <div className="metric-label">Skills Catalogued</div>
-                </div>
-                <div className="metric-item">
-                  <div className="metric-value">2,850+</div>
-                  <div className="metric-label">Study Sessions Completed</div>
-                </div>
-                <div className="metric-item">
-                  <div className="metric-value">4.9 / 5.0</div>
-                  <div className="metric-label">Student Satisfaction</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ------------------------------------------------------------------
-          3. How It Works (Three Steps)
+          2. How It Works (Three Steps)
           ------------------------------------------------------------------ */}
       <section className="how-it-works-section" id="how-it-works">
         <div className="container">
@@ -602,6 +447,11 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* ------------------------------------------------------------------
+          3. Skill Buddies Animated Showcase
+          ------------------------------------------------------------------ */}
+      <SkillBuddies />
 
       {/* ------------------------------------------------------------------
           4. Popular Skill Categories
