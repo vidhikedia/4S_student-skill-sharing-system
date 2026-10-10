@@ -284,7 +284,7 @@ const Home = () => {
                 transition={
                   shouldReduceMotion
                     ? { duration: 0 }
-                    : { type: 'spring', stiffness: 420, damping: 18, delay: 0.1 }
+                    : { duration: 0.45, ease: [0.34, 1.56, 0.64, 1], delay: 0.1 }
                 }
               >
                 <span className="hero-brand-subtitle-swipe" aria-hidden="true"></span>
